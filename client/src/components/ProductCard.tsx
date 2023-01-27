@@ -1,29 +1,17 @@
-import React, { useState } from "react";
+import React from "react";
 import { ProductInterface } from "../interface/ProductInterFace";
-import { ProductCardDetail } from "./ProductCardDetail";
-import { Routes, Route} from "react-router-dom"
+import { useNavigate } from 'react-router-dom';
 
 interface Props {
   product: ProductInterface;
 }
 export const ProductCard = ({ product }: Props) => {
   const {  name, type, storage } = product;
-  const [showDetails, setShowDetails] = useState<boolean>();
+  const navigate = useNavigate();
   return (
     <div>
-      {showDetails && <div className="coverLayer"></div>}
-      {showDetails && (
-        <Routes>
-          <Route path="/login" element ={<ProductCardDetail
-            product={product}
-            closeDetails={() => setShowDetails(false)}
-          />
-        }/>
-        </Routes>
-      )}
-
-      <div className="puppyCard" onClick={() => setShowDetails(true)}>
-        <div className="puppyCard_desc">
+      <div className="productCard" onClick={() => {navigate(`/${product.id}`)}}>
+        <div className="productCard_desc">
           <img
             alt="pic"
             src="https://i.ibb.co/wY4z8Jv/milk2.jpg"

@@ -1,19 +1,32 @@
 .App {
-    /* text-align: center; */
     background-color: #ffe2e3;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
-    /* font-size: calc(10px + 2vmin); */
     color: rgb(67, 64, 64);
-    /* overflow: hidden; */
+    overflow: hidden;
   }
-  .header {
-    text-align: center;
-    margin-bottom: -50px;
+  .lable{
+    margin-right: -60px;
+    font-size: small;
   }
+  .searchbar{
+    align-items: center;
+    display: flex;
+    display: inline-block;
+    justify-content: left;
+    margin-left: 22rem;
+    margin-top: 20px;
+    
+  }
+  .filter{
+    display: flex;
+    align-items: center;
+    margin-left: 48rem;
+    margin-top: -55px;
+  }
+
   h4{
     text-align: left;
     margin-left: 8px;
@@ -32,11 +45,14 @@
   
   .sticky__header{
     text-align: center;
-    position: sticky; top:0px;
+    position: sticky; 
+    padding-top: 10px;
+    height: 70px;
     background-color: #ffffff;
     width: 100%;
     font-family: 'Courier New', monospace;
     color: #ca889f;
+    
     
   }
   button:hover{
@@ -47,39 +63,44 @@
   
   label{
     width: 20%;
+    
   }
   
-  
-  /* p{
-    line-height: 0.8;
-  } */
-  
-  .puppyContainer{
-    /* position: relative; */
+
+  .cardContainer{
+    position: relative;
     width: 75vw;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    align-items: center; 
+   justify-content: center;
+    margin-left: 10rem;
+    margin-top: 20px;
+    
   }
   
   
-  .puppyCard{
+  .productCard{
     background-color: white;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
-    /* position: relative; */
+    position: relative;
     display: flex;
     flex-direction: column;
     border: white solid 1px;
     border-radius: 0px;
     margin:1rem;
     margin-top: 30px;
-    /* padding: 1rem; */
+    padding-top: 1rem;
+    
+    
   }
   
   
-  .puppyCard_desc{
+  .productCard_desc{
     margin-top: -1rem;
-    /* margin-left: 0px; */
+  
   }
+  
   .p__type {
     text-align: left;
     display: inline-block;
@@ -92,92 +113,72 @@
   }
   .p__amount {
     display: inline-block;
-    /* margin-right: -9px; */
     color: #babd98;
     text-align: right;
     
   }
   
-  .button_delete{
-    background-color: blueviolet;
-    align-self: flex-end;
+  .button_back{
+    background-color: #ffe2e3;
+    align-self: flex-start;
     justify-self: flex-start;
-    color: rgb(231, 231, 231);
-    border: #ffffff solid 1px;
-    border-radius: 30%;
-    z-index: 1;
-    font-size: 10px;
-    height: 23px
+    margin-top: -45px;
+    margin-right: 30px;
+    color: rgb(56, 55, 55);
+    font-size: 15px;
+    height: 23px;
+    border: #ffe2e3;
+
     
   }
   
   
-  .puppyCard_buttons{
-    display: flex;
-    justify-content: space-around;
-    
-  }
-  
-  .puppyCardDetail{
-    width: 13em;
+  .productCardDetail{ 
     height: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    /* background-color: #282c34; */
-    border: #fbfbfc solid 1px;
-    border-radius: 25px;
-  } 
-  
-  .puppyCardDetail p{
-    line-height: 0;
-  }
-  
-  .coverLayer{
+    flex-direction: row;
     position: absolute;
     z-index: 4;
-    background-color: rgba(94, 95, 96, 0.835);
-    width: 150vw;
-    height: 400vw;
-    margin-left: -50vw;
-    margin-top: -100vh;
-  }
-  
-  .puppyCardEditing, .puppyCardDetail {
-    position: absolute;
-    z-index: 4;
-    display: flex;
     align-self: center;
     justify-self: center;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 35vw;
+    width: 25vw;
     height: auto;
-    background-color: rgb(169, 123, 211);
-    border: #fbfbfc solid 1px;
-    border-radius: 25px;
-    padding: 15px;
+    background-color: #ffe2e3;
+    margin-left: -30px;
+  } 
+   
+  .product__desc__img{
+    margin-right: 20px;
+    width: 250px;
   }
-  
-  .puppyCardDetail button{
-    margin-bottom: -20px;
+  .product__dsc__data p {
+   font-size: small;
+   margin-left: 270px;
+   margin-bottom: -10px;
+   font-size: 15px;
+   
+
   }
-  
-  .form_editing{
-    height: 200px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
+  .order{
+    color: #0b0b0b;
+    background-color: #a9a9a9;
+    border: #282c34;
+    border-radius: 0px;
+    width: 50px;
+    margin-top: 90px;
+    margin-left: 350px;
   }
-  
-  .form_editing p{
-    margin-block-start: -1em;
-    margin-block-end: 0;
+  .product__dsc__data{
+
+    margin-top: -200px;
+    width: 800px;
   }
+
   
+  .productCardDetail button{
+    margin-bottom: 0px;
+  }
   
   
   .formContainer{
@@ -246,6 +247,32 @@
     width: 20vw;
     height: auto;
   }
+
+  .pagination {
+ 
+    margin-left: 30rem;
+    margin-top: 20px;
+    margin-bottom: 5rem;
+  }
+  
+  .pagination a {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: background-color .3s;
+    border: 1px solid #ddd;
+    justify-content: center;
+    align-items: center;
+
+  }
+  
+  .pagination a.active {
+    color: white;
+    border: 1px solid black;
+  }
+  
+  .pagination a:hover:not(.active) { border: 1px solid black;}
   
   
   @media  (max-width: 481px) {
@@ -257,14 +284,14 @@
       font-size: larger;
     }
   
-    .puppyContainer {
+    .cardContainer {
         display: flex;
         flex-direction: column;
         align-self: center;
         margin-left: 17%;
         width: 100vw;
     }
-    .puppyCard{
+    .productCard{
       width: 60%;
     }
   
@@ -272,22 +299,7 @@
       width: 90vw;
     }
   
-    .puppyCardDetail {
-      margin-top: -340%;
-      height: 300vh;
-    }
-    
-  
-    .puppyCardEditing{
-      margin-top: -370%;
-      height: 300vh;
-    }
-  
-    .puppyCardEditing_block{
-      width: 90%;
-      margin-top: 100%;
-    }
-  
+   
     img {
       width: 50vw;
       height: auto;
@@ -296,7 +308,7 @@
   }
   
   @media (max-width: 768px) {
-    .puppyContainer {
+    .cardContainer {
       grid-template-columns: 1fr 1fr;
     }
   
